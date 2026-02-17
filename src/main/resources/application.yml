@@ -1,0 +1,16 @@
+# For more properties (nacos): http://172.19.23.84:8080/
+
+# web service port
+server:
+  port: 9999
+
+# 将系统日志设置为 debug 级别
+logging:
+  level:
+    root: debug
+
+spring:
+  application:
+    name: LangChainAgent
+  profiles:
+    active: dev
