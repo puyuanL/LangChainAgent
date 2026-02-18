@@ -7,7 +7,7 @@ server:
 # 将系统日志设置为 debug 级别
 logging:
   level:
-    root: debug
+    root: info
 
 spring:
   application:

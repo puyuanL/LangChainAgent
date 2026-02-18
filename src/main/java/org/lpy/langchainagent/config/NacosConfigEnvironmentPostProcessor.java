@@ -25,7 +25,7 @@ public class NacosConfigEnvironmentPostProcessor implements EnvironmentPostProce
     // Nacos配置参数（与application.yml中一致）
     private static final String NACOS_SERVER_ADDR = "172.19.23.84:8848";
     // aliyun_bailian.yml / deepseek-api.yml / ollama_model.yml / demo-api.yml
-    private static final String NACOS_DATA_ID = "deepseek-api.yml";
+    private static final String NACOS_DATA_ID = "aliyun_bailian.yml";
     private static final String NACOS_GROUP = "DEFAULT_GROUP";
     private static final String NACOS_NAMESPACE = ""; // public命名空间填空字符串
     private static final int NACOS_TIMEOUT = 5000;
