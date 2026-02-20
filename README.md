@@ -6,7 +6,7 @@
 
 项目采用 LangChain4J + SpringBoot 实现大模型智能体的部署
 
-
+nacos: http://172.19.23.84:8080/index.html#/login
 
 
 
