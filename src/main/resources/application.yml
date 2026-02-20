@@ -14,3 +14,11 @@ spring:
     name: LangChainAgent
   profiles:
     active: dev
+  data:
+    mongodb:
+      host: 172.19.23.84
+      port: 27017
+      database: chat_memory_db
+      username: root
+      password: lpy123
+      authentication-database: admin

@@ -32,7 +32,7 @@
     </properties>
 
     <dependencies>
-        <!-- springboot web & test & yml_loading -->
+        <!-- springboot web & test & yml_loading & mongoDB -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -47,12 +47,20 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+        <!-- Spring Boot Starter Data MongoDB -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
+
         <!-- 前后端分离中的后端接口测试工具 -->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
             <version>${knife4j.version}</version>
         </dependency>
+
         <!-- 基于open-ai的 langchain4j 接口 -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
