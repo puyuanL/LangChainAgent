@@ -96,11 +96,11 @@ public class ChatMemoryTests {
     private SeparateChatAssistant separateChatAssistant;
     @Test
     public void testSeparateChatMemory() {
-        String answer1 = separateChatAssistant.chat(1,"你好，我是 puyuan");
+        String answer1 = separateChatAssistant.chatSysMsg(1,"你好，我是 puyuan");
         System.out.println("ChatId 1: " + answer1);
-        String answer2 = separateChatAssistant.chat(1,"你好，你知道我是谁吗？");
+        String answer2 = separateChatAssistant.chatSysMsg(1,"你好，你知道我是谁吗？");
         System.out.println("ChatId 1: " + answer2);
-        String answer3 = separateChatAssistant.chat(2,"你好，你知道我是谁吗？");
+        String answer3 = separateChatAssistant.chatSysMsg(2,"你好，你知道我是谁吗？");
         System.out.println("ChatId 2: " + answer3);
     }
 

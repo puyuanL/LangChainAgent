@@ -46,3 +46,11 @@ nacos: http://172.19.23.84:8080/index.html#/login
 
 （3）将 `MongoChatMemoryStore` 注入 `Config` 类中，将其作为 `chatMemoryStore` 
 
+
+
+#### 4、Prompt
+
+采用 @SystemMessage、@UserMessage、@V 三种注解实现系统和多个用户提示词设置
+
+
+
