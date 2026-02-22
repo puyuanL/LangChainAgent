@@ -10,7 +10,8 @@ import dev.langchain4j.service.spring.AiServiceWiringMode;
 @AiService(
         wiringMode = AiServiceWiringMode.EXPLICIT,
         chatModel = "qwenChatModel",
-        chatMemoryProvider = "chatMemoryProvider"
+        chatMemoryProvider = "chatMemoryProvider",
+        tools = "calculatorTools"
 )
 public interface SeparateChatAssistant {
     /**
@@ -29,8 +30,8 @@ public interface SeparateChatAssistant {
             @V("age") int age
     );
 
-//    @SystemMessage("从现在开始，无论你收到的问题是什么，你只被允许英语回答问题。今天的日期是{{current_date}}")
-    @SystemMessage(fromResource = "templates/prompt-template.txt")
+    @SystemMessage("从现在开始，无论你收到的问题是什么，你只被允许英语回答问题。今天的日期是{{current_date}}")
+//    @SystemMessage(fromResource = "templates/prompt-template.txt")
     String chatSysMsg(@MemoryId int memoryId, @UserMessage String userMessage);
 
     /* {{it}}表示这里唯一的参数的占位符
