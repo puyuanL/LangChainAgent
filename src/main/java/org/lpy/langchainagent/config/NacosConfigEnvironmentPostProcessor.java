@@ -1,6 +1,7 @@
 package org.lpy.langchainagent.config;
 
 import com.alibaba.nacos.api.NacosFactory;
+import com.alibaba.nacos.api.PropertyKeyConst;
 import com.alibaba.nacos.api.config.ConfigService;
 import com.alibaba.nacos.api.exception.NacosException;
 import org.slf4j.Logger;
@@ -23,11 +24,13 @@ public class NacosConfigEnvironmentPostProcessor implements EnvironmentPostProce
     private static final Logger log = LoggerFactory.getLogger(NacosConfigEnvironmentPostProcessor.class);
 
     // Nacos配置参数（与application.yml中一致）
-    private static final String NACOS_SERVER_ADDR = "172.19.23.84:8848";
+    private static final String NACOS_SERVER_ADDR = "172.18.91.89:8848";
     // aliyun_bailian.yml / deepseek-api.yml / ollama_model.yml / demo-api.yml
     private static final String NACOS_DATA_ID = "aliyun_bailian.yml";
-    private static final String NACOS_GROUP = "DEFAULT_GROUP";
+    private static final String NACOS_GROUP = "LangChainAgent";
     private static final String NACOS_NAMESPACE = ""; // public命名空间填空字符串
+    private static final String NACOS_USERNAME = "nacos"; // Nacos默认用户名
+    private static final String NACOS_PASSWORD = "lpy123"; // Nacos默认密码
     private static final int NACOS_TIMEOUT = 5000;
 
     @Override
@@ -35,8 +38,10 @@ public class NacosConfigEnvironmentPostProcessor implements EnvironmentPostProce
         try {
             // 1. 构建Nacos配置服务参数
             Properties properties = new Properties();
-            properties.put("serverAddr", NACOS_SERVER_ADDR);
-            properties.put("namespace", NACOS_NAMESPACE);
+            properties.put(PropertyKeyConst.SERVER_ADDR, NACOS_SERVER_ADDR);
+            properties.put(PropertyKeyConst.NAMESPACE, NACOS_NAMESPACE);
+            properties.put(PropertyKeyConst.USERNAME, NACOS_USERNAME); // 新增：必填
+            properties.put(PropertyKeyConst.PASSWORD, NACOS_PASSWORD); // 新增：必填
             properties.put("timeout", NACOS_TIMEOUT);
 
             // 2. 创建Nacos配置客户端并读取配置

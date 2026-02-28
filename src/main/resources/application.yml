@@ -1,4 +1,4 @@
-# For more properties (nacos): http://172.19.23.84:8080/
+# For more properties (nacos): http://172.18.91.89:8848/nacos
 
 # web service port
 server:
@@ -16,9 +16,19 @@ spring:
     active: dev
   data:
     mongodb:
-      host: 172.19.23.84
+      host: 172.18.91.89
       port: 27017
       database: chat_memory_db
       username: root
       password: lpy123
       authentication-database: admin
+  datasource:
+    url: jdbc:mysql://172.18.91.89:3306/LangChainAgent?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 开启 SQL 日志打印
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

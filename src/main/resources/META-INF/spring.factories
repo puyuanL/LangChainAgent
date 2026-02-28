@@ -1,2 +1,2 @@
-# ??Nacos?????????
+# Nacos
 org.springframework.boot.env.EnvironmentPostProcessor=org.lpy.langchainagent.config.NacosConfigEnvironmentPostProcessor
